@@ -8,14 +8,13 @@ public class CountWords {
 
 		// Count words start with 'M' or 'm'
 		long count = words.stream().filter(word -> word.toLowerCase().startsWith("m")).count();
-		List<String> wordsStartwithM = words.stream().filter(word -> word.toLowerCase().startsWith("m")));
+		List<String> wordsStartwithM = words.stream().filter(word -> word.toLowerCase().startsWith("m")).collect(Collectors.toList());
 		
 		// Return all words longer than 5 characters
-		List<String> longWords = words.stream()
-			.filter(word -> word.length() > 5)
-			.collect(Collectors.toList());
+		List<String> longWords = words.stream().filter(word -> word.length() > 5).collect(Collectors.toList());
 
-		System.out.println("Number of words starting with 'M' or 'm':" + count, +wordsStartwithM);
+		System.out.println("Number of words starting with 'M' or 'm':" + count);
+		System.out.println("Number of words starting with 'M' or 'm':" +wordsStartwithM);
 		System.out.println("All the words longer than 5 characters: " + longWords);
 	}
 }
